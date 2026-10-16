@@ -89,7 +89,7 @@ a {
    - Viñeta de cámara retro en los bordes
    ========================================================================== */
 
-/* Aura atmosférica minimalista y rica combinando #FFA500, #780606 y #000000 */
+/* Aura atmosférica: #780606 ÚNICAMENTE a los costados laterales, centro 100% negro y limpio */
 .cuphead-bg-aura {
   position: fixed;
   top: 0;
@@ -99,33 +99,30 @@ a {
   z-index: -3;
   pointer-events: none;
   background: 
-    /* Reflector superior cálido naranja ámbar (#FFA500) estilo proyector vintage */
-    radial-gradient(circle 850px at 50% -120px, rgba(255, 165, 0, 0.20) 0%, rgba(255, 165, 0, 0.05) 55%, transparent 75%),
-    /* Resplandor lateral izquierdo rojo sangre (#780606) como telón teatral clásico */
-    radial-gradient(circle 750px at 8% 88%, rgba(120, 6, 6, 0.36) 0%, rgba(120, 6, 6, 0.10) 50%, transparent 75%),
-    /* Resplandor cálido complementario en la derecha inferior (#FFA500 y #780606) */
-    radial-gradient(circle 700px at 92% 72%, rgba(255, 165, 0, 0.12) 0%, rgba(120, 6, 6, 0.22) 42%, transparent 75%),
-    /* Lienzo negro puro (#000000) */
+    /* Reflector superior sutil naranja (#FFA500) solo en el borde superior */
+    radial-gradient(ellipse 600px 160px at 50% -40px, rgba(255, 165, 0, 0.16) 0%, rgba(255, 165, 0, 0.03) 50%, transparent 75%),
+    /* Resplandor lateral IZQUIERDO rojo sangre (#780606) pegado al borde */
+    radial-gradient(ellipse 260px 85% at 0% 50%, rgba(120, 6, 6, 0.42) 0%, rgba(120, 6, 6, 0.12) 50%, transparent 80%),
+    /* Resplandor lateral DERECHO rojo sangre (#780606) pegado al borde */
+    radial-gradient(ellipse 260px 85% at 100% 50%, rgba(120, 6, 6, 0.38) 0%, rgba(120, 6, 6, 0.10) 50%, transparent 80%),
+    /* Centro y base: Negro puro (#000000) completamente limpio para las cards */
     #000000;
   animation: cupheadAtmospherePulse 6.5s ease-in-out infinite alternate;
 }
 
 @keyframes cupheadAtmospherePulse {
   0% {
-    opacity: 0.82;
-    filter: brightness(0.95);
+    opacity: 0.85;
   }
   50% {
     opacity: 1;
-    filter: brightness(1.08);
   }
   100% {
-    opacity: 0.88;
-    filter: brightness(0.98);
+    opacity: 0.90;
   }
 }
 
-/* Haz de luz diagonal del proyector de celuloide */
+/* Haz de luz superior suave sin invadir el centro */
 .cuphead-projector-beam {
   position: fixed;
   top: 0;
@@ -135,11 +132,9 @@ a {
   z-index: -2;
   pointer-events: none;
   background: linear-gradient(
-    135deg,
-    rgba(255, 165, 0, 0.05) 0%,
-    transparent 32%,
-    rgba(120, 6, 6, 0.06) 58%,
-    transparent 100%
+    180deg,
+    rgba(255, 165, 0, 0.04) 0%,
+    transparent 24%
   );
   mix-blend-mode: screen;
 }
@@ -155,12 +150,12 @@ a {
   pointer-events: none;
   background: repeating-linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.15) 0px,
-    rgba(0, 0, 0, 0.15) 1px,
+    rgba(0, 0, 0, 0.14) 0px,
+    rgba(0, 0, 0, 0.14) 1px,
     transparent 1px,
     transparent 3px
   );
-  opacity: 0.45;
+  opacity: 0.40;
 }
 
 /* Estática / Ruido de película vintage estilo Cuphead */
@@ -185,7 +180,7 @@ a {
   100% { transform: translate(3%, 3%); }
 }
 
-/* Viñeta circular oscura en los bordes con tinte sutil rojo/negro */
+/* Viñeta oscura limpia solo en las esquinas extremas (sin tapar el centro) */
 .cuphead-vignette {
   position: fixed;
   top: 0;
@@ -194,7 +189,7 @@ a {
   height: 100vh;
   z-index: 998;
   pointer-events: none;
-  background: radial-gradient(circle at center, transparent 52%, rgba(120, 6, 6, 0.16) 80%, rgba(0, 0, 0, 0.75) 100%);
+  background: radial-gradient(circle at center, transparent 72%, rgba(0, 0, 0, 0.65) 100%);
 }
 
 /* ==========================================================================

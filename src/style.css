@@ -53,7 +53,6 @@ html {
   font-size: 16px;
   background-color: var(--color-black);
   scroll-behavior: smooth;
-  /* Scroll padding para que el navbar nunca solape las secciones al navegar */
   scroll-padding-top: calc(var(--navbar-height-mobile) + 1rem);
 }
 
@@ -67,9 +66,8 @@ body {
   min-height: 100vh;
 }
 
-/* Compensación de scroll en cada sección para evitar solapamientos del Navbar */
 section, .section {
-  scroll-margin-top: calc(var(--navbar-height-mobile) + 1rem);
+  scroll-margin-top: calc(var(--navbar-height-mobile) + 1.25rem);
 }
 
 ::selection {
@@ -83,7 +81,7 @@ a {
   transition: all var(--transition-fast);
 }
 
-/* Fondo decorativo cuadrícula retro */
+/* Fondo decorativo */
 .retro-grid-bg {
   position: fixed;
   top: 0;
@@ -125,6 +123,7 @@ a {
 
 /* ==========================================================================
    2. NAVBAR FIJO (MOBILE-FIRST)
+   - En mobile: Brand a la izquierda, Hamburguesa a la DERECHA, sin GitHub
    ========================================================================== */
 .navbar-wrapper {
   position: fixed;
@@ -135,7 +134,7 @@ a {
   padding: 0.65rem 1rem;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  background: rgba(0, 0, 0, 0.88);
+  background: rgba(0, 0, 0, 0.9);
   border-bottom: var(--neo-border-width) solid var(--color-dark-border);
 }
 
@@ -166,7 +165,7 @@ a {
   color: var(--color-orange);
 }
 
-/* Botón Hamburguesa para Mobile */
+/* Botón Hamburguesa alineado a la derecha en Mobile */
 .mobile-toggle {
   display: flex;
   flex-direction: column;
@@ -180,7 +179,7 @@ a {
   padding: 8px;
   cursor: pointer;
   transition: all var(--transition-fast);
-  order: 2;
+  margin-left: auto; /* Alineación obligatoria a la derecha */
 }
 
 .mobile-toggle:hover,
@@ -198,7 +197,6 @@ a {
   transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.25s ease;
 }
 
-/* Animación cuando el menú móvil está abierto */
 .mobile-toggle.active .bar:nth-child(1) {
   transform: translateY(7.5px) rotate(45deg);
   background-color: var(--color-orange);
@@ -213,7 +211,12 @@ a {
   background-color: var(--color-orange);
 }
 
-/* Enlaces del Nav en Mobile (Desplegable animado) */
+/* En Mobile: ocultar botón de GitHub en el navbar para mantenerlo limpio */
+.nav-actions {
+  display: none;
+}
+
+/* Menú desplegable en Mobile */
 .nav-links {
   list-style: none;
   position: absolute;
@@ -222,7 +225,7 @@ a {
   right: -1rem;
   background-color: #0b0b0e;
   border-bottom: var(--neo-border-width) solid var(--color-orange);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.9);
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -234,7 +237,7 @@ a {
 }
 
 .nav-links.open {
-  max-height: 260px;
+  max-height: 320px;
   opacity: 1;
   pointer-events: auto;
   padding: 0.75rem 1rem 1.25rem;
@@ -260,35 +263,6 @@ a {
   padding-left: 1.25rem;
 }
 
-.nav-actions {
-  display: flex;
-  align-items: center;
-  order: 3;
-}
-
-.btn-nav-gh {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  padding: 0.45rem 0.75rem;
-  background-color: #141419;
-  border: var(--neo-border-width) solid var(--color-dark-border);
-  border-radius: var(--border-radius-sm);
-  color: var(--color-text-primary);
-  font-weight: 600;
-  min-height: 40px;
-}
-
-.btn-nav-gh:active,
-.btn-nav-gh:hover {
-  border-color: var(--color-orange);
-  color: var(--color-orange);
-  box-shadow: 2px 2px 0px var(--color-orange);
-  transform: translate(-1px, -1px);
-}
-
 /* ==========================================================================
    3. CONTENEDOR PRINCIPAL Y CAJAS NEO-BRUTALISTAS
    ========================================================================== */
@@ -312,7 +286,7 @@ a {
 }
 
 /* ==========================================================================
-   4. SECCIÓN 1: HERO (PRESENTACIÓN)
+   4. SECCIÓN 1: PRESENTACIÓN (HERO)
    ========================================================================== */
 .hero-body {
   padding: 1.75rem 1.15rem;
@@ -399,7 +373,6 @@ a {
   font-weight: 400;
 }
 
-/* Botones en Mobile: Ancho completo y fácil de tocar */
 .hero-cta-group {
   display: flex;
   flex-direction: column;
@@ -454,29 +427,22 @@ a {
   background-color: var(--color-red-light);
 }
 
-.btn-outline {
-  background-color: transparent;
-  color: var(--color-text-primary);
-  border-color: #3b3b45;
-  box-shadow: 3px 3px 0px var(--color-dark-border);
-}
-
-.btn-outline:active,
-.btn-outline:hover {
-  transform: translate(-1px, -1px);
-  border-color: var(--color-orange);
-  color: var(--color-orange);
-  box-shadow: 3px 3px 0px var(--color-orange);
-}
-
 .btn-small {
   padding: 0.65rem 1rem;
   font-size: 0.85rem;
   min-height: 44px;
 }
 
+.btn-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
 /* ==========================================================================
-   5. SECCIÓN 2: SKILLS (MOBILE-FIRST)
+   5. SECCIÓN 2: SKILLS (SIMÉTRICAS + LOGO ARRIBA A LA DERECHA)
    ========================================================================== */
 .section {
   display: flex;
@@ -512,28 +478,39 @@ a {
   line-height: 1.6;
 }
 
-/* Grilla de Skills: 1 columna en mobile */
+/* Grilla Simétrica de Skills */
 .skills-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  align-items: stretch;
 }
 
 .skill-card {
   padding: 1.75rem 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  justify-content: space-between; /* Simetría perfecta */
+  gap: 1.25rem;
+  height: 100%;
   box-shadow: var(--neo-shadow-red);
   background: linear-gradient(180deg, #131317 0%, #0d0d10 100%);
+}
+
+/* Cabecera de la card: Badge a la izquierda, Logo ARRIBA A LA DERECHA */
+.skill-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
 }
 
 .card-badge {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 800;
-  padding: 0.3rem 0.65rem;
-  width: fit-content;
+  padding: 0.35rem 0.7rem;
   border-radius: var(--border-radius-sm);
   letter-spacing: 0.5px;
 }
@@ -550,8 +527,26 @@ a {
   border: 1px solid #000000;
 }
 
+/* Logo arriba a la derecha */
 .skill-icon-wrapper {
   color: var(--color-orange);
+  background-color: #1a1612;
+  border: 1.5px solid var(--color-orange);
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+}
+
+.skill-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-grow: 1; /* Permite que ambas cards tengan el mismo alto */
 }
 
 .skill-title {
@@ -595,7 +590,9 @@ a {
   color: var(--color-text-muted);
 }
 
-/* Tarjeta Destacada de Proyecto (target="_blank") */
+/* ==========================================================================
+   6. SECCIÓN 3: PROYECTOS (PROYECTO EN DESARROLLO :))
+   ========================================================================== */
 .project-spotlight {
   padding: 1.75rem 1.25rem;
   display: flex;
@@ -654,7 +651,7 @@ a {
 }
 
 /* ==========================================================================
-   6. SECCIÓN 3: CONTACTO (MOBILE-FIRST)
+   7. SECCIÓN 4: CONTACTO (SIMÉTRICA + TÍTULO IZQUIERDA Y LOGO DERECHA)
    ========================================================================== */
 .contact-card {
   padding: 1.75rem 1.25rem;
@@ -668,22 +665,65 @@ a {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
+  align-items: stretch;
 }
 
 .contact-method-card {
   background-color: #0c0c10;
   border: var(--neo-border-width) solid #282832;
   border-radius: var(--border-radius-sm);
-  padding: 1.25rem;
+  padding: 1.35rem 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  justify-content: space-between; /* Simetría perfecta */
+  gap: 1.15rem;
+  height: 100%;
   box-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+  transition: all var(--transition-fast);
 }
 
+.contact-method-card:hover {
+  border-color: var(--color-orange);
+  box-shadow: 3px 3px 0px var(--color-orange);
+}
+
+/* Cabecera Contacto: Título al lado izquierdo, Logo a la derecha */
+.contact-method-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+.method-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.method-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.method-value {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #ffffff;
+  word-break: break-all;
+}
+
+/* Logo a la derecha */
 .method-icon-circle {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 8px;
   background-color: #1a1510;
   border: 1.5px solid var(--color-orange);
@@ -692,28 +732,7 @@ a {
   justify-content: center;
   color: var(--color-orange);
   flex-shrink: 0;
-}
-
-.method-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.method-label {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--color-text-muted);
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.method-value {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #ffffff;
-  word-break: break-all;
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.5);
 }
 
 .method-actions {
@@ -730,64 +749,14 @@ a {
   background-color: rgba(120, 6, 6, 0.25);
   color: #ff8585;
   border: 1px solid var(--color-red);
-  padding: 0.5rem 0.75rem;
+  padding: 0.55rem 0.75rem;
   border-radius: 4px;
   font-weight: 600;
   text-align: center;
 }
 
 /* ==========================================================================
-   7. TOAST NOTIFICACIÓN (MOBILE-FIRST)
-   ========================================================================== */
-.toast {
-  position: fixed;
-  bottom: 1.5rem;
-  left: 1rem;
-  right: 1rem;
-  max-width: 380px;
-  margin: 0 auto;
-  background-color: var(--color-dark-surface);
-  color: #ffffff;
-  border: var(--neo-border-width) solid var(--color-orange);
-  box-shadow: 3px 3px 0px var(--color-orange);
-  padding: 0.75rem 1.15rem;
-  border-radius: var(--border-radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.65rem;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 600;
-  z-index: 2000;
-  opacity: 0;
-  transform: translateY(20px);
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.toast.show {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.toast-icon {
-  background-color: var(--color-orange);
-  color: #000000;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 0.75rem;
-  flex-shrink: 0;
-}
-
-/* ==========================================================================
-   8. FOOTER (MOBILE-FIRST)
+   8. FOOTER
    ========================================================================== */
 .footer {
   border-top: var(--neo-border-width) solid var(--color-dark-border);
@@ -860,7 +829,7 @@ a {
 }
 
 /* ==========================================================================
-   9. ESTILOS PROYECTO.HTML (MOBILE-FIRST)
+   9. ESTILOS PROYECTO.HTML
    ========================================================================== */
 .page-development {
   display: flex;
@@ -978,10 +947,10 @@ a {
 }
 
 /* ==========================================================================
-   10. MEDIA QUERIES PROGRESSIVAS (TABLET & DESKTOP ENHANCEMENT)
+   10. MEDIA QUERIES PROGRESSIVAS (TABLET & DESKTOP)
    ========================================================================== */
 
-/* Tablet & Pantallas Medianas (min-width: 640px) */
+/* Tablet (min-width: 640px) */
 @media (min-width: 640px) {
   .hero-body {
     padding: 2.25rem 1.75rem;
@@ -995,11 +964,6 @@ a {
 
   .hero-cta-group .btn {
     width: auto;
-  }
-
-  .method-actions {
-    flex-direction: row;
-    flex-wrap: wrap;
   }
 
   .dev-meta-box {
@@ -1023,7 +987,7 @@ a {
   }
 }
 
-/* Tablet Horizontal & Desktop (min-width: 768px) */
+/* Desktop (min-width: 768px) */
 @media (min-width: 768px) {
   html {
     scroll-padding-top: calc(var(--navbar-height-desktop) + 1.25rem);
@@ -1037,12 +1001,37 @@ a {
     padding: 1.1rem 2rem;
   }
 
-  /* Ocultar botón hamburguesa en desktop */
   .mobile-toggle {
     display: none;
   }
 
-  /* Navbar links en línea horizontal en desktop */
+  /* Mostrar botón de GitHub en Desktop */
+  .nav-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-nav-gh {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    padding: 0.45rem 0.85rem;
+    background-color: #141419;
+    border: var(--neo-border-width) solid var(--color-dark-border);
+    border-radius: var(--border-radius-sm);
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+
+  .btn-nav-gh:hover {
+    border-color: var(--color-orange);
+    color: var(--color-orange);
+    box-shadow: 2px 2px 0px var(--color-orange);
+    transform: translate(-1px, -1px);
+  }
+
   .nav-links {
     position: static;
     background-color: transparent;
@@ -1097,6 +1086,7 @@ a {
     gap: 1.4rem;
   }
 
+  /* Grilla de Skills perfectamente simétrica en 2 columnas */
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -1110,9 +1100,14 @@ a {
     padding: 2.75rem 2.25rem;
   }
 
+  /* Grilla de Contacto simétrica en 3 columnas o auto-fit */
   .contact-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+  }
+
+  .contact-method-card {
+    padding: 1.6rem 1.4rem;
   }
 
   .footer-top {

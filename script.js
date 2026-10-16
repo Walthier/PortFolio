@@ -1,9 +1,8 @@
 /**
  * Interacciones del Portfolio - Kevin Tobias Martinez
- * - Menú responsive Mobile-First (Hamburguesa / Drawer)
- * - Navegación con scroll suave y compensación del Navbar fijo (sin solapamiento)
- * - Detección de sección activa en el Navbar
- * - Copiado de email al portapapeles con feedback flotante (Toast)
+ * - Menú responsive Mobile-First (Hamburguesa en la derecha)
+ * - Navegación con scroll suave y compensación del Navbar fijo (anti-solapamiento)
+ * - Detección de sección activa en el Navbar (Presentación, Skills, Proyectos, Contacto)
  * - Año dinámico en el footer
  */
 
@@ -14,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     yearElement.textContent = new Date().getFullYear();
   }
 
-  // 2. Menú móvil (Toggle Hamburguesa)
+  // 2. Menú móvil (Toggle Hamburguesa a la derecha)
   const mobileToggle = document.getElementById('mobile-toggle');
   const navLinks = document.getElementById('nav-links');
 
@@ -65,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Calcular la altura real actual del navbar + margen de respiro
         const navHeight = navbarWrapper ? navbarWrapper.offsetHeight : 70;
-        const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight - 14;
+        const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
 
         window.scrollTo({
           top: Math.max(0, targetTop),
@@ -85,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach((current) => {
       const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - navHeight - 30;
+      const sectionTop = current.offsetTop - navHeight - 32;
       const sectionId = current.getAttribute('id');
 
       if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
@@ -102,49 +101,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', highlightNavigation, { passive: true });
   highlightNavigation();
-
-  // 5. Copiado de Correo con Toast
-  const copyBtn = document.getElementById('copy-email-btn');
-  const copyBtnText = document.getElementById('copy-btn-text');
-  const toast = document.getElementById('toast');
-  const emailToCopy = 'walthie.white.22@gmail.com';
-
-  let toastTimeout = null;
-
-  if (copyBtn) {
-    copyBtn.addEventListener('click', async () => {
-      try {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          await navigator.clipboard.writeText(emailToCopy);
-        } else {
-          // Fallback para navegadores antiguos
-          const tempInput = document.createElement('textarea');
-          tempInput.value = emailToCopy;
-          document.body.appendChild(tempInput);
-          tempInput.select();
-          document.execCommand('copy');
-          document.body.removeChild(tempInput);
-        }
-
-        // Feedback visual en el botón
-        if (copyBtnText) {
-          copyBtnText.textContent = '¡Copiado!';
-          setTimeout(() => {
-            copyBtnText.textContent = 'Copiar Email';
-          }, 2500);
-        }
-
-        // Mostrar Toast flotante
-        if (toast) {
-          toast.classList.add('show');
-          if (toastTimeout) clearTimeout(toastTimeout);
-          toastTimeout = setTimeout(() => {
-            toast.classList.remove('show');
-          }, 3200);
-        }
-      } catch (err) {
-        console.error('Error al copiar al portapapeles:', err);
-      }
-    });
-  }
 });

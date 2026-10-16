@@ -1,5 +1,3 @@
-import './style.css';
-
 /**
  * Interacciones del Portfolio - Kevin Tobias Martinez (Vite Edition)
  * - Copiado de email al portapapeles con toast de confirmación

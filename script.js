@@ -1,5 +1,5 @@
 /**
- * Interacciones del Portfolio - Kevin Tobias Martinez
+ * Interacciones del Portfolio - Kevin Tobias Martinez (Vite Edition)
  * - Copiado de email al portapapeles con toast de confirmación
  * - Detección de sección activa en el navbar fijo
  * - Año dinámico para el footer

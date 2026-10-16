@@ -1,0 +1,7 @@
+Necesito que me hagas un Portfolio para mi, este portfolio tiene que tener incluido esto
+  mis datos personales:
+ nombre y apellido: Kevin Tobias Martinez
+- Direccion: Vivo en Berisso
+- Skills: Reparacion de pc, Programador web con IA
+Quiero que le agregues estos colores #FFA500 #780606 #000000 que combinen con estos estilos:glassmorphism, neo brutalims, y2t, retro,neumorphism, minimalism; que este espaciada y las fuentes que sean estas: https://tamalsen.dev/
+ las secciones y ordenes que quiero que hagas son: la presentacion, pone mi nombre Kevin y mi Apellido, pone un mini texto generico de presentacion profesional para mi portfolio (si veo algo para cambiarlo yo te digo).Abajo hace un mini texto generico de presentacion en la parte de las skills, elegi un estilo de los que te mande y agrega un target_blank con el mismo estilo y colores que te mande y que la pagina diga "projecto en desarollo :)", tambien quiero que pongas mi github que es esta URL https://github.com/Walthier, abajo de las skills pone mi seccion de contacto que seria mi correo "walthie.white.22@gmail.com" y mi github que bueno ya te lo mande le URL, pone tambien un mini texto generico en esa seccion de contactos y por el ultimo el footer, pone cosas genericas. y por ultimo pone un navbar fijo que lleve a esas seccion. quiero que tu rol sea un prefsional y critico constructivo de portfolio y tirame ideas o reconmendanciones para mejorar mi portfolio

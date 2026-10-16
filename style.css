@@ -83,13 +83,13 @@ a {
 
 /* ==========================================================================
    FONDO CUPHEAD VINTAGE + MINIMALISMO (#FFA500, #780606, #000000)
-   - Fondo negro puro (#000000) como lienzo base
-   - Iluminación ambiental cálida combinando naranja (#FFA500) y rojo granate (#780606)
-   - Estática y grano de celuloide estilo dibujos animados de los años 30
+   - Fondo negro puro (#000000) de base minimalista
+   - Iluminación ambiental de celuloide combinando ámbar/naranja (#FFA500) y rojo granate (#780606)
+   - Scanlines y grano de película de dibujos animados de los años 30
    - Viñeta de cámara retro en los bordes
    ========================================================================== */
 
-/* Aura atmosférica minimalista combinando #FFA500, #780606 y #000000 */
+/* Aura atmosférica minimalista y rica combinando #FFA500, #780606 y #000000 */
 .cuphead-bg-aura {
   position: fixed;
   top: 0;
@@ -99,33 +99,33 @@ a {
   z-index: -3;
   pointer-events: none;
   background: 
-    /* Spotlight superior cálido (#FFA500) estilo reflector de teatro vintage */
-    radial-gradient(ellipse 65% 45% at 50% -5%, rgba(255, 165, 0, 0.14) 0%, transparent 68%),
-    /* Resplandor lateral rojo granate (#780606) estilo telón dramático */
-    radial-gradient(ellipse 55% 50% at 10% 90%, rgba(120, 6, 6, 0.28) 0%, transparent 65%),
-    /* Resplandor cálido en esquina inferior derecha */
-    radial-gradient(ellipse 50% 45% at 90% 70%, rgba(255, 165, 0, 0.09) 0%, rgba(120, 6, 6, 0.18) 45%, transparent 68%),
-    /* Base negro absoluto (#000000) */
+    /* Reflector superior cálido naranja ámbar (#FFA500) estilo proyector vintage */
+    radial-gradient(circle 850px at 50% -120px, rgba(255, 165, 0, 0.20) 0%, rgba(255, 165, 0, 0.05) 55%, transparent 75%),
+    /* Resplandor lateral izquierdo rojo sangre (#780606) como telón teatral clásico */
+    radial-gradient(circle 750px at 8% 88%, rgba(120, 6, 6, 0.36) 0%, rgba(120, 6, 6, 0.10) 50%, transparent 75%),
+    /* Resplandor cálido complementario en la derecha inferior (#FFA500 y #780606) */
+    radial-gradient(circle 700px at 92% 72%, rgba(255, 165, 0, 0.12) 0%, rgba(120, 6, 6, 0.22) 42%, transparent 75%),
+    /* Lienzo negro puro (#000000) */
     #000000;
-  animation: cupheadAtmospherePulse 7s ease-in-out infinite alternate;
+  animation: cupheadAtmospherePulse 6.5s ease-in-out infinite alternate;
 }
 
 @keyframes cupheadAtmospherePulse {
   0% {
-    opacity: 0.85;
-    transform: scale(1);
+    opacity: 0.82;
+    filter: brightness(0.95);
   }
   50% {
     opacity: 1;
-    transform: scale(1.015);
+    filter: brightness(1.08);
   }
   100% {
-    opacity: 0.90;
-    transform: scale(0.995);
+    opacity: 0.88;
+    filter: brightness(0.98);
   }
 }
 
-/* Haz de luz sutil del proyector de celuloide */
+/* Haz de luz diagonal del proyector de celuloide */
 .cuphead-projector-beam {
   position: fixed;
   top: 0;
@@ -135,13 +135,32 @@ a {
   z-index: -2;
   pointer-events: none;
   background: linear-gradient(
-    130deg,
-    rgba(255, 165, 0, 0.04) 0%,
-    transparent 35%,
-    rgba(120, 6, 6, 0.05) 60%,
+    135deg,
+    rgba(255, 165, 0, 0.05) 0%,
+    transparent 32%,
+    rgba(120, 6, 6, 0.06) 58%,
     transparent 100%
   );
   mix-blend-mode: screen;
+}
+
+/* Scanlines de película vintage (micro-líneas de celuloide sutiles) */
+.cuphead-scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 997;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: 0.45;
 }
 
 /* Estática / Ruido de película vintage estilo Cuphead */
@@ -153,8 +172,8 @@ a {
   height: 200%;
   z-index: 999;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.80;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.82;
   animation: cupheadGrain 0.22s steps(4) infinite;
 }
 
@@ -175,7 +194,7 @@ a {
   height: 100vh;
   z-index: 998;
   pointer-events: none;
-  background: radial-gradient(circle at center, transparent 55%, rgba(120, 6, 6, 0.14) 82%, rgba(0, 0, 0, 0.65) 100%);
+  background: radial-gradient(circle at center, transparent 52%, rgba(120, 6, 6, 0.16) 80%, rgba(0, 0, 0, 0.75) 100%);
 }
 
 /* ==========================================================================
@@ -643,46 +662,57 @@ a {
 }
 
 /* ==========================================================================
-   6. SECCIÓN 3: PROYECTOS (PROYECTO EN DESARROLLO :))
+   6. SECCIÓN 3: PROYECTOS (TARJETA Y BOTÓN 100% SIMÉTRICOS)
    ========================================================================== */
 .project-spotlight {
-  padding: 1.75rem 1.25rem;
+  padding: 2.25rem 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  background: linear-gradient(135deg, #16120e 0%, #170707 50%, #0d0d10 100%);
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  background: linear-gradient(180deg, #16120e 0%, #170707 50%, #0d0d10 100%);
   border: var(--neo-border-width) solid var(--color-orange);
   box-shadow: 4px 4px 0px var(--color-red);
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .spotlight-content {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+  gap: 0.65rem;
+  max-width: 680px;
 }
 
 .spotlight-tag {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   color: var(--color-orange);
   font-weight: 800;
-  letter-spacing: 0.75px;
+  letter-spacing: 0.85px;
 }
 
 .spotlight-title {
-  font-size: 1.35rem;
+  font-size: clamp(1.4rem, 4.5vw, 1.85rem);
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.3;
+  line-height: 1.28;
 }
 
 .spotlight-desc {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   color: var(--color-text-secondary);
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .spotlight-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -691,8 +721,15 @@ a {
   color: #000000;
   border: 2px solid #000000;
   box-shadow: 3px 3px 0px #ffffff;
-  padding: 0.9rem 1.2rem;
-  width: 100%;
+  padding: 0.95rem 2.25rem;
+  width: auto;
+  min-width: 270px;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
 }
 
 .btn-project-cta:active,
@@ -1137,22 +1174,7 @@ a {
 /* Desktop Grande (min-width: 1024px) */
 @media (min-width: 1024px) {
   .project-spotlight {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2.25rem;
-  }
-
-  .spotlight-content {
-    max-width: 680px;
-  }
-
-  .spotlight-action {
-    width: auto;
-    flex-shrink: 0;
-  }
-
-  .btn-project-cta {
-    width: auto;
+    padding: 2.75rem 2.5rem;
+    gap: 1.75rem;
   }
 }

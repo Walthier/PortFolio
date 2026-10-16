@@ -211,11 +211,6 @@ a {
   background-color: var(--color-orange);
 }
 
-/* En Mobile: ocultar botón de GitHub en el navbar para mantenerlo limpio */
-.nav-actions {
-  display: none;
-}
-
 /* Menú desplegable en Mobile */
 .nav-links {
   list-style: none;
@@ -1005,33 +1000,7 @@ a {
     display: none;
   }
 
-  /* Mostrar botón de GitHub en Desktop */
-  .nav-actions {
-    display: flex;
-    align-items: center;
-  }
-
-  .btn-nav-gh {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-family: var(--font-mono);
-    font-size: 0.82rem;
-    padding: 0.45rem 0.85rem;
-    background-color: #141419;
-    border: var(--neo-border-width) solid var(--color-dark-border);
-    border-radius: var(--border-radius-sm);
-    color: var(--color-text-primary);
-    font-weight: 600;
-  }
-
-  .btn-nav-gh:hover {
-    border-color: var(--color-orange);
-    color: var(--color-orange);
-    box-shadow: 2px 2px 0px var(--color-orange);
-    transform: translate(-1px, -1px);
-  }
-
+  /* Secciones del Navbar alineadas a la DERECHA en modo escritorio */
   .nav-links {
     position: static;
     background-color: transparent;
@@ -1040,12 +1009,13 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1.75rem;
+    gap: 1.85rem;
     max-height: none;
     overflow: visible;
     opacity: 1;
     pointer-events: auto;
     padding: 0;
+    margin-left: auto; /* Alineación de las secciones a la derecha */
   }
 
   .nav-item {

@@ -89,7 +89,7 @@ a {
    - Viñeta de cámara retro en los bordes
    ========================================================================== */
 
-/* Aura atmosférica: #780606 ÚNICAMENTE a los costados laterales, centro 100% negro y limpio */
+/* Aura atmosférica: degradados con transparencia combinando #780606, #FFA500 y #000000 */
 .cuphead-bg-aura {
   position: fixed;
   top: 0;
@@ -99,13 +99,15 @@ a {
   z-index: -3;
   pointer-events: none;
   background: 
-    /* Reflector superior sutil naranja (#FFA500) solo en el borde superior */
-    radial-gradient(ellipse 600px 160px at 50% -40px, rgba(255, 165, 0, 0.16) 0%, rgba(255, 165, 0, 0.03) 50%, transparent 75%),
-    /* Resplandor lateral IZQUIERDO rojo sangre (#780606) pegado al borde */
-    radial-gradient(ellipse 260px 85% at 0% 50%, rgba(120, 6, 6, 0.42) 0%, rgba(120, 6, 6, 0.12) 50%, transparent 80%),
-    /* Resplandor lateral DERECHO rojo sangre (#780606) pegado al borde */
-    radial-gradient(ellipse 260px 85% at 100% 50%, rgba(120, 6, 6, 0.38) 0%, rgba(120, 6, 6, 0.10) 50%, transparent 80%),
-    /* Centro y base: Negro puro (#000000) completamente limpio para las cards */
+    /* Resplandor superior cálido naranja ámbar (#FFA500) que se funde en transparencia con el negro */
+    radial-gradient(ellipse 800px 320px at 50% -80px, rgba(255, 165, 0, 0.22) 0%, rgba(255, 165, 0, 0.08) 45%, transparent 75%),
+    /* Resplandor lateral izquierdo rojo (#780606) que se difumina suavemente con transparencia */
+    radial-gradient(ellipse 480px 80% at 0% 50%, rgba(120, 6, 6, 0.45) 0%, rgba(120, 6, 6, 0.15) 50%, transparent 80%),
+    /* Resplandor lateral derecho rojo (#780606) que se difumina suavemente con transparencia */
+    radial-gradient(ellipse 480px 80% at 100% 50%, rgba(120, 6, 6, 0.45) 0%, rgba(120, 6, 6, 0.15) 50%, transparent 80%),
+    /* Resplandor inferior tenue rojo y naranja fundidos con el fondo negro */
+    radial-gradient(ellipse 700px 250px at 50% 105%, rgba(120, 6, 6, 0.35) 0%, rgba(255, 165, 0, 0.08) 40%, transparent 75%),
+    /* Base negro puro (#000000) */
     #000000;
   animation: cupheadAtmospherePulse 6.5s ease-in-out infinite alternate;
 }
@@ -122,7 +124,7 @@ a {
   }
 }
 
-/* Haz de luz superior suave sin invadir el centro */
+/* Haz de luz de proyector sutil que se desvanece en transparencia */
 .cuphead-projector-beam {
   position: fixed;
   top: 0;
@@ -131,10 +133,11 @@ a {
   height: 100vh;
   z-index: -2;
   pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 165, 0, 0.04) 0%,
-    transparent 24%
+  background: radial-gradient(
+    ellipse 900px 500px at 50% 0%,
+    rgba(255, 165, 0, 0.06) 0%,
+    rgba(120, 6, 6, 0.05) 50%,
+    transparent 80%
   );
   mix-blend-mode: screen;
 }
@@ -333,6 +336,8 @@ a {
    3. CONTENEDOR PRINCIPAL Y CAJAS NEO-BRUTALISTAS
    ========================================================================== */
 .content-container {
+  position: relative;
+  z-index: 5;
   max-width: 1140px;
   margin: 0 auto;
   padding: 4.8rem 1rem 3rem;
@@ -347,6 +352,7 @@ a {
   border-radius: var(--border-radius-base);
   box-shadow: var(--neo-shadow-orange);
   position: relative;
+  z-index: 2;
   overflow: hidden;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
 }

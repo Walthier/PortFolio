@@ -82,8 +82,69 @@ a {
 }
 
 /* ==========================================================================
-   EFECTO ESTÁTICA / FILM GRAIN ESTILO CUPHEAD (1930s Animation)
+   FONDO CUPHEAD VINTAGE + MINIMALISMO (#FFA500, #780606, #000000)
+   - Fondo negro puro (#000000) como lienzo base
+   - Iluminación ambiental cálida combinando naranja (#FFA500) y rojo granate (#780606)
+   - Estática y grano de celuloide estilo dibujos animados de los años 30
+   - Viñeta de cámara retro en los bordes
    ========================================================================== */
+
+/* Aura atmosférica minimalista combinando #FFA500, #780606 y #000000 */
+.cuphead-bg-aura {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -3;
+  pointer-events: none;
+  background: 
+    /* Spotlight superior cálido (#FFA500) estilo reflector de teatro vintage */
+    radial-gradient(ellipse 65% 45% at 50% -5%, rgba(255, 165, 0, 0.14) 0%, transparent 68%),
+    /* Resplandor lateral rojo granate (#780606) estilo telón dramático */
+    radial-gradient(ellipse 55% 50% at 10% 90%, rgba(120, 6, 6, 0.28) 0%, transparent 65%),
+    /* Resplandor cálido en esquina inferior derecha */
+    radial-gradient(ellipse 50% 45% at 90% 70%, rgba(255, 165, 0, 0.09) 0%, rgba(120, 6, 6, 0.18) 45%, transparent 68%),
+    /* Base negro absoluto (#000000) */
+    #000000;
+  animation: cupheadAtmospherePulse 7s ease-in-out infinite alternate;
+}
+
+@keyframes cupheadAtmospherePulse {
+  0% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.015);
+  }
+  100% {
+    opacity: 0.90;
+    transform: scale(0.995);
+  }
+}
+
+/* Haz de luz sutil del proyector de celuloide */
+.cuphead-projector-beam {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  pointer-events: none;
+  background: linear-gradient(
+    130deg,
+    rgba(255, 165, 0, 0.04) 0%,
+    transparent 35%,
+    rgba(120, 6, 6, 0.05) 60%,
+    transparent 100%
+  );
+  mix-blend-mode: screen;
+}
+
+/* Estática / Ruido de película vintage estilo Cuphead */
 .cuphead-static-overlay {
   position: fixed;
   top: -50%;
@@ -92,8 +153,8 @@ a {
   height: 200%;
   z-index: 999;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.75;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.80;
   animation: cupheadGrain 0.22s steps(4) infinite;
 }
 
@@ -105,6 +166,7 @@ a {
   100% { transform: translate(3%, 3%); }
 }
 
+/* Viñeta circular oscura en los bordes con tinte sutil rojo/negro */
 .cuphead-vignette {
   position: fixed;
   top: 0;
@@ -113,47 +175,7 @@ a {
   height: 100vh;
   z-index: 998;
   pointer-events: none;
-  background: radial-gradient(circle at center, transparent 65%, rgba(0, 0, 0, 0.45) 100%);
-}
-
-/* Fondo decorativo */
-.retro-grid-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -3;
-  pointer-events: none;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: radial-gradient(ellipse at center, black 35%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 35%, transparent 80%);
-}
-
-.ambient-glow {
-  position: fixed;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  filter: blur(90px);
-  z-index: -2;
-  pointer-events: none;
-  opacity: 0.3;
-}
-
-.glow-orange {
-  top: -80px;
-  right: -80px;
-  background: radial-gradient(circle, var(--color-orange) 0%, transparent 70%);
-}
-
-.glow-red {
-  bottom: 20px;
-  left: -80px;
-  background: radial-gradient(circle, var(--color-red) 0%, transparent 70%);
+  background: radial-gradient(circle at center, transparent 55%, rgba(120, 6, 6, 0.14) 82%, rgba(0, 0, 0, 0.65) 100%);
 }
 
 /* ==========================================================================
@@ -1132,11 +1154,5 @@ a {
 
   .btn-project-cta {
     width: auto;
-  }
-
-  .ambient-glow {
-    width: 550px;
-    height: 550px;
-    filter: blur(140px);
   }
 }

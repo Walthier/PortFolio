@@ -878,6 +878,46 @@ a {
   box-shadow: 4px 4px 0px var(--color-red);
 }
 
+.contact-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .contact-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+.contact-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.contact-location-badge {
+  align-self: flex-start;
+  background-color: #141419;
+  border: 1.5px solid var(--color-orange);
+  box-shadow: 2px 2px 0px var(--color-orange);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--border-radius-pill);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .contact-location-badge {
+    align-self: flex-start;
+    margin-top: 0.25rem;
+  }
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr;

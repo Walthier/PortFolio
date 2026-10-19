@@ -241,31 +241,73 @@
     <section id="proyectos" class="section projects-section">
       <div class="section-header">
         <span class="section-tag">// PROYECTOS & DESARROLLOS</span>
-        <h2 class="section-title">Proyectos en Construcción</h2>
+        <h2 class="section-title">Proyectos</h2>
         <p class="section-subtitle">
-          Explorá mis desarrollos activos donde integro desarrollo web moderno, interfaces reactivas y herramientas de Inteligencia Artificial.
+          Explorá mis desarrollos activos y proyectos de prueba donde integro desarrollo web moderno, interfaces reactivas y herramientas de Inteligencia Artificial.
         </p>
       </div>
 
-      <!-- Tarjeta destacada con target="_blank" al Proyecto en Desarrollo -->
-      <div class="project-spotlight neo-box">
-        <div class="spotlight-content">
-          <div class="spotlight-tag">LABORATORIO DE DESARROLLO</div>
-          <h3 class="spotlight-title">Explorá mis proyectos activos</h3>
-          <p class="spotlight-desc">
-            Actualmente me encuentro desarrollando nuevas plataformas interactivas que integran tecnologías frontend y soluciones inteligentes. Hacé clic para ver el estado actual en una pestaña nueva.
-          </p>
-        </div>
-        <div class="spotlight-action">
-          <a href="proyecto.html" target="_blank" rel="noopener noreferrer" class="btn btn-project-cta">
-            <span>Proyecto en desarrollo :)</span>
-            <svg class="icon-external" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </a>
-        </div>
+      <!-- Cuadrícula simétrica de Proyectos (Mobile-first a 1 col, Desktop a 2 col) -->
+      <div class="projects-grid">
+
+        <!-- Proyecto 1: Proyecto en desarrollo -->
+        <article class="project-card neo-box">
+          <div class="project-card-header">
+            <span class="project-tag">LABORATORIO & SOFTWARE</span>
+            <div class="project-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-title">Proyecto en Desarrollo</h3>
+            <p class="project-desc">
+              Actualmente me encuentro desarrollando nuevas plataformas interactivas que integran tecnologías frontend y soluciones inteligentes. Podés ver el estado actual en una pestaña nueva.
+            </p>
+          </div>
+          <div class="project-card-action">
+            <a href="proyecto.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-project-cta">
+              <span>Proyecto en desarrollo :)</span>
+              <svg class="icon-external" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Proyecto 2: Página hecha con IA (Don Pochoclón) -->
+        <article class="project-card neo-box">
+          <div class="project-card-header">
+            <span class="project-tag">DEMO & EXPERIMENTO IA</span>
+            <div class="project-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              </svg>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-title">Página hecha con IA</h3>
+            <p class="project-desc">
+              Sitio web creado como demostración y prueba de concepto para exhibir las capacidades del desarrollo ágil potenciado con Inteligencia Artificial.
+            </p>
+          </div>
+          <div class="project-card-action">
+            <a href="pagina-ia.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-project-cta">
+              <span>Ver Demostración</span>
+              <svg class="icon-external" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </article>
+
       </div>
     </section>
 
@@ -274,9 +316,9 @@
       <div class="contact-card neo-box">
         <div class="contact-header">
           <span class="section-tag">// HABLEMOS</span>
-          <h2 class="section-title">Canales de Contacto Directo</h2>
+          <h2 class="section-title">Contacto</h2>
           <p class="section-subtitle">
-            ¿Tenés un equipo que necesita reparación o una idea web que querés llevar a cabo con IA? Escribime directamente o revisá mis repositorios de código. Respondo con prontitud.
+            ¿Tenés un equipo que necesita reparación o una idea web que querés llevar a cabo con IA? Escribime directamente o conectemos por redes. Respondo con prontitud.
           </p>
         </div>
 
@@ -343,25 +385,6 @@
                 <span>Conectar en LinkedIn</span>
                 <span class="btn-arrow">↗</span>
               </a>
-            </div>
-          </div>
-
-          <!-- Bloque de Ubicación -->
-          <div class="contact-method-card">
-            <div class="contact-method-header">
-              <div class="method-title-wrap">
-                <span class="method-label">UBICACIÓN / COBERTURA</span>
-                <span class="method-value">Berisso, Buenos Aires</span>
-              </div>
-              <div class="method-icon-circle">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-              </div>
-            </div>
-            <div class="method-actions">
-              <span class="location-coverage-badge">Soporte Presencial & Remoto</span>
             </div>
           </div>
 

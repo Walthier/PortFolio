@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         proyecto: resolve(__dirname, 'proyecto.html'),
+        'pagina-ia': resolve(__dirname, 'pagina-ia.html'),
       },
     },
   },

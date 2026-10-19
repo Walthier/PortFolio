@@ -755,57 +755,90 @@ a {
 }
 
 /* ==========================================================================
-   6. SECCIÓN 3: PROYECTOS (TARJETA Y BOTÓN 100% SIMÉTRICOS)
+   6. SECCIÓN 3: PROYECTOS (TARJETAS SIMÉTRICAS MOBILE-FIRST)
    ========================================================================== */
-.project-spotlight {
-  padding: 2.25rem 1.5rem;
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.project-card {
+  padding: 1.85rem 1.35rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1.5rem;
-  background: linear-gradient(180deg, #16120e 0%, #170707 50%, #0d0d10 100%);
+  justify-content: space-between;
+  gap: 1.35rem;
+  height: 100%;
+  background: linear-gradient(180deg, #16120e 0%, #150808 50%, #0d0d10 100%);
   border: var(--neo-border-width) solid var(--color-orange);
   box-shadow: 4px 4px 0px var(--color-red);
-  max-width: 860px;
-  margin: 0 auto;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  border-color: #ffb733;
+  box-shadow: 6px 6px 0px var(--color-red);
+}
+
+.project-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   width: 100%;
 }
 
-.spotlight-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.65rem;
-  max-width: 680px;
-}
-
-.spotlight-tag {
+.project-tag {
   font-family: var(--font-mono);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   color: var(--color-orange);
   font-weight: 800;
-  letter-spacing: 0.85px;
+  letter-spacing: 0.8px;
+  background-color: rgba(255, 165, 0, 0.1);
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid rgba(255, 165, 0, 0.25);
 }
 
-.spotlight-title {
-  font-size: clamp(1.4rem, 4.5vw, 1.85rem);
+.project-icon-wrapper {
+  color: var(--color-orange);
+  background-color: #1a1510;
+  border: 1.5px solid var(--color-orange);
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+}
+
+.project-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-grow: 1;
+}
+
+.project-title {
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.28;
+  line-height: 1.3;
 }
 
-.spotlight-desc {
-  font-size: 0.95rem;
+.project-desc {
+  font-size: 0.94rem;
   color: var(--color-text-secondary);
   line-height: 1.6;
 }
 
-.spotlight-action {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.project-card-action {
+  margin-top: auto;
   width: 100%;
 }
 
@@ -814,15 +847,17 @@ a {
   color: #000000;
   border: 2px solid #000000;
   box-shadow: 3px 3px 0px #ffffff;
-  padding: 0.95rem 2.25rem;
-  width: auto;
-  min-width: 270px;
-  max-width: 100%;
+  padding: 0.85rem 1.4rem;
+  width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
   text-align: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  border-radius: var(--border-radius-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
 }
 
 .btn-project-cta:active,
@@ -1224,9 +1259,19 @@ a {
     padding: 2.75rem 2.25rem;
   }
 
-  /* Grilla de Contacto simétrica en 2 columnas (2x2 para 4 canales) */
-  .contact-grid {
+  /* Grilla de Proyectos simétrica en 2 columnas */
+  .projects-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .project-card {
+    padding: 2.25rem 2rem;
+  }
+
+  /* Grilla de Contacto simétrica en 3 columnas (3 canales) */
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
 
@@ -1261,8 +1306,7 @@ a {
 
 /* Desktop Grande (min-width: 1024px) */
 @media (min-width: 1024px) {
-  .project-spotlight {
-    padding: 2.75rem 2.5rem;
-    gap: 1.75rem;
+  .project-card {
+    padding: 2.5rem 2.25rem;
   }
 }

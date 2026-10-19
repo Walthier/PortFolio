@@ -462,27 +462,29 @@ a {
 .status-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 0.75rem;
+  gap: 0.75rem;
+  padding: 0.5rem 0.95rem;
   background-color: rgba(255, 165, 0, 0.08);
   border: 1.5px solid var(--color-orange);
   border-radius: var(--border-radius-pill);
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.8rem;
   color: var(--color-orange);
   width: fit-content;
+  max-width: 100%;
   box-shadow: 2px 2px 0px var(--color-orange);
   line-height: 1.35;
 }
 
 .status-indicator {
-  width: 8px;
-  height: 8px;
-  min-width: 8px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
   border-radius: 50%;
   background-color: #27c93f;
-  box-shadow: 0 0 8px #27c93f;
+  box-shadow: 0 0 10px #27c93f, 0 0 2px #ffffff;
   animation: pulseDot 2s infinite ease-in-out;
+  flex-shrink: 0;
 }
 
 @keyframes pulseDot {

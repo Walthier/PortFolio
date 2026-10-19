@@ -5,3 +5,27 @@ Necesito que me hagas un Portfolio para mi, este portfolio tiene que tener inclu
 - Skills: Reparacion de pc, Programador web con IA
 Quiero que le agregues estos colores #FFA500 #780606 #000000 que combinen con estos estilos:glassmorphism, neo brutalims, y2t, retro,neumorphism, minimalism; que este espaciada y las fuentes que sean estas: https://tamalsen.dev/
  las secciones y ordenes que quiero que hagas son: la presentacion, pone mi nombre Kevin y mi Apellido, pone un mini texto generico de presentacion profesional para mi portfolio (si veo algo para cambiarlo yo te digo).Abajo hace un mini texto generico de presentacion en la parte de las skills, elegi un estilo de los que te mande y agrega un target_blank con el mismo estilo y colores que te mande y que la pagina diga "projecto en desarollo :)", tambien quiero que pongas mi github que es esta URL https://github.com/Walthier, abajo de las skills pone mi seccion de contacto que seria mi correo "walthie.white.22@gmail.com" y mi github que bueno ya te lo mande le URL, pone tambien un mini texto generico en esa seccion de contactos y por el ultimo el footer, pone cosas genericas. y por ultimo pone un navbar fijo que lleve a esas seccion. quiero que tu rol sea un prefsional y critico constructivo de portfolio y tirame ideas o reconmendanciones para mejorar mi portfolio
+
+
+
+Cambios o mejoras en el PortFolio:
+hace que la pagina sea mobilefirst, el kevin_martinez_portfolio.sh esta de mas ahi, arregla el scroll automatico ya que el navbar solapa las secciones (hecho)
+
+
+en mobilefirst en el navbar, la hamburguesa ponela en la derecha y el github sacalo, hace una nueva seccion que serian proyectos y ahi pones el "proyecto en desarrolo" ya que en skills no va y solamente iria en proyectos, en la seccion de presentacion quita el boton de github, tambien en la parte don dice "vivo en berisso, Buenos aires" saca el "vivo", en la seccion de skills, los logos ponelo arriba a la derecha y hace las cards simetricas tambien hacelo en la seccion de contacto, el logo ponelo en la derecha y el titulo al lado, osea, en la izquierda y el boton de "copiar email" quitalo, esta de mas
+
+el navbar del github en modo escritorio, sacalo y las secciones del navbar ponelo a la derecha
+
+en el footer, achicalo y sacale el texto de diseñado con estetica y tambien las secciones, el texto este "Kevin Tobias Martinez
+Programador Web con IA & Reparación de PC en Berisso." ponelo a la derecha y ponelo simetrico.
+quiero que el fondo le hagas un fondo de estatica como cuphead, como minimalista, agregale este efecto de estatica de cuphead ( no pongas ningun fondo, dejalo como esta, negro; solo ponelo este efecto, te dejo una imagen de ejemplo
+
+quiero que hagas un efecto combinando estos colores en el fondo #FFA500 #780606 #000000, combinalo con la estetica de cuphead y tambien que conserve el diseño minimalista
+
+en el modo mobilefirst en la seccion de proyectos, el boton de proyecto en desarollo, esta asimetrico, ponelo simetrico, si queda asimetrico en escritorio tambien ponelo simetrico y el efecto de colores esta bien pero me gustaria que lo mejores, mejora un poco el fondo
+
+el efecto del color #780606 esta muy en medio, ponelo solo a los costados, queda medio feo que tape un poco las card
+
+no te dije que se lo saques, volve a poner el color #780606, volve a poner el efecto del fondo como estaba solo que no traspase las card, nomas que aparezca como trasparencia y que combine con el fondo negro
+
+el efecto de estatica de cuphead cambiala y remplazala por este video https://youtu.be/FTmkMFSOJ_0 agrega ese efecto de esa url, hace que no se vea tan molesto para el que entre a la pagina y el nombre de la pagina cambialo por <ktm/> | PortFolio

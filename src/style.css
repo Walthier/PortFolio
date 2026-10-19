@@ -142,7 +142,94 @@ a {
   mix-blend-mode: screen;
 }
 
-/* Scanlines de película vintage (micro-líneas de celuloide sutiles) */
+/* Grano de película celuloide Cuphead — textura sutil con leve movimiento */
+.cuphead-film-grain {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 997;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  animation: cupheadGrainDrift 0.15s steps(3) infinite;
+}
+
+@keyframes cupheadGrainDrift {
+  0%   { transform: translate(0, 0); }
+  33%  { transform: translate(-2%, 1.5%); }
+  66%  { transform: translate(1.5%, -2%); }
+  100% { transform: translate(-1%, -1%); }
+}
+
+/* Polvo y rayaduras verticales de película — líneas finas que bajan como en un proyector viejo */
+.cuphead-dust-scratches {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 997;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.scratch {
+  position: absolute;
+  top: -100%;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.06) 30%,
+    rgba(255, 255, 255, 0.10) 50%,
+    rgba(255, 255, 255, 0.06) 70%,
+    transparent 100%
+  );
+  opacity: 0;
+  animation: scratchFall linear infinite;
+}
+
+.scratch-1 {
+  left: 22%;
+  animation-duration: 4.2s;
+  animation-delay: 0s;
+}
+
+.scratch-2 {
+  left: 58%;
+  animation-duration: 5.8s;
+  animation-delay: 1.5s;
+}
+
+.scratch-3 {
+  left: 81%;
+  animation-duration: 3.6s;
+  animation-delay: 3s;
+  width: 1.5px;
+}
+
+@keyframes scratchFall {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.6;
+  }
+  95% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+}
+
+/* Scanlines celuloide — líneas horizontales micro como en un proyector de cine años 30 */
 .cuphead-scanlines {
   position: fixed;
   top: 0;
@@ -153,37 +240,15 @@ a {
   pointer-events: none;
   background: repeating-linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.14) 0px,
-    rgba(0, 0, 0, 0.14) 1px,
+    rgba(0, 0, 0, 0.08) 0px,
+    rgba(0, 0, 0, 0.08) 1px,
     transparent 1px,
-    transparent 3px
+    transparent 4px
   );
-  opacity: 0.40;
+  opacity: 0.35;
 }
 
-/* Estática / Ruido de película vintage estilo Cuphead */
-.cuphead-static-overlay {
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  z-index: 999;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.82;
-  animation: cupheadGrain 0.22s steps(4) infinite;
-}
-
-@keyframes cupheadGrain {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(-3%, 2%); }
-  50% { transform: translate(2%, -3%); }
-  75% { transform: translate(-2%, -2%); }
-  100% { transform: translate(3%, 3%); }
-}
-
-/* Viñeta oscura limpia solo en las esquinas extremas (sin tapar el centro) */
+/* Viñeta oscura de proyector — bordes oscurecidos como la lente de cámara vintage */
 .cuphead-vignette {
   position: fixed;
   top: 0;
@@ -192,7 +257,34 @@ a {
   height: 100vh;
   z-index: 998;
   pointer-events: none;
-  background: radial-gradient(circle at center, transparent 72%, rgba(0, 0, 0, 0.65) 100%);
+  background: radial-gradient(
+    ellipse at center,
+    transparent 55%,
+    rgba(0, 0, 0, 0.30) 80%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+}
+
+/* Parpadeo de proyector Cuphead — fluctuación suave de brillo como un celuloide pasando por la lámpara */
+.cuphead-flicker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 996;
+  pointer-events: none;
+  background: transparent;
+  animation: cupheadFlicker 0.12s infinite;
+  opacity: 0.025;
+}
+
+@keyframes cupheadFlicker {
+  0%   { background: rgba(255, 255, 255, 0.04); }
+  25%  { background: transparent; }
+  50%  { background: rgba(255, 255, 255, 0.02); }
+  75%  { background: transparent; }
+  100% { background: rgba(255, 255, 255, 0.03); }
 }
 
 /* ==========================================================================

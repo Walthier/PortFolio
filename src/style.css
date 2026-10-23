@@ -723,20 +723,27 @@ a {
 }
 
 .skill-tags {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
   margin-top: 0.25rem;
+  width: 100%;
 }
 
 .tech-chip {
   font-family: var(--font-mono);
   font-size: 0.74rem;
-  padding: 0.35rem 0.6rem;
+  padding: 0.38rem 0.6rem;
   background-color: #191922;
   border: 1.5px solid #2e2e3a;
   border-radius: 4px;
   color: var(--color-text-primary);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .skill-footer {

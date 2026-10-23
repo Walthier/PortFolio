@@ -47,3 +47,9 @@ volvele a poner el de "Proyecto en desarrolo :)" y en la seccion de la pagina de
 en la seccion de presentacion, el boton verde hacelo un poquito mas grande y separalo del texto y ponelo arriba a la izquierda y  el texto a la derecha, hacelo simetrico y mobilefirst
 
 en la seccion de presentacion, en mobile first, mi nombre aparece asimetrico, ponelo simetrico y mobilefirst 
+
+en la seccion de habilidades de la pagina web los cartelitos que estan abajo de cada card, estan asimetricos, ponelo simetrico y no olvides de hacerlo mobilefirst, te mando esta imagen de ejemplo
+
+quedo bien pero los textos que estan debajo de eso esta de mas como el de "desarollo agil & soluciones a medida" y las otras 4 cards mas de la seccion de habilidades
+
+en la seccion de "contacto" pone 2 botones al lado del "Berisso, Buenos Aires" el primer boton q sea para descargar el cv, solo el icono de descarga nomas( ponele tooltip que diga "descargar CV") y el segundo boton que seria para ver el cv en modo shit, el boton que sel llame "Mirar CV" hacelo simetrico y en mobilefirst

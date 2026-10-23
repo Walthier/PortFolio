@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV – Kevin Tobias Martinez</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f5f0;
+      color: #111;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    .back-btn {
+      align-self: flex-start;
+      margin-bottom: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.8rem;
+      color: #780606;
+      border: 2px solid #780606;
+      background: transparent;
+      padding: 0.4rem 0.9rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.15s, color 0.15s;
+    }
+    .back-btn:hover { background: #780606; color: #fff; }
+
+    .cv-wrapper {
+      width: 100%;
+      max-width: 820px;
+      background: #fff;
+      border: 3px solid #000;
+      box-shadow: 6px 6px 0 #FFA500;
+    }
+
+    /* ─── HEADER ─── */
+    .cv-header {
+      background: #000;
+      color: #fff;
+      padding: 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .cv-name {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .cv-name span { color: #FFA500; }
+    .cv-role {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.88rem;
+      color: #aaa;
+    }
+    .cv-contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.4rem;
+      margin-top: 0.6rem;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.78rem;
+      color: #ccc;
+    }
+    .cv-contact-row a { color: #FFA500; text-decoration: none; }
+    .cv-contact-row a:hover { text-decoration: underline; }
+
+    /* ─── BODY ─── */
+    .cv-body { padding: 2rem 2.5rem; display: flex; flex-direction: column; gap: 1.8rem; }
+
+    .cv-section {}
+    .cv-section-title {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #780606;
+      border-bottom: 2px solid #000;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .cv-summary p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    /* Skills */
+    .cv-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.5rem;
+    }
+    .cv-skill-chip {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.75rem;
+      padding: 0.35rem 0.7rem;
+      border: 1.5px solid #000;
+      background: #f5f5f0;
+      color: #111;
+      text-align: center;
+    }
+
+    /* Experience / Education */
+    .cv-entry { margin-bottom: 1.2rem; }
+    .cv-entry:last-child { margin-bottom: 0; }
+    .cv-entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .cv-entry-title { font-weight: 700; font-size: 0.95rem; }
+    .cv-entry-sub {
+      font-size: 0.82rem;
+      color: #555;
+      margin-top: 0.1rem;
+    }
+    .cv-entry-date {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.75rem;
+      color: #888;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .cv-entry-desc {
+      font-size: 0.85rem;
+      color: #444;
+      line-height: 1.6;
+      margin-top: 0.45rem;
+    }
+    .cv-entry-desc ul { padding-left: 1.2rem; }
+    .cv-entry-desc li { margin-bottom: 0.25rem; }
+
+    /* Projects */
+    .cv-project-link {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.75rem;
+      color: #780606;
+    }
+
+    /* ─── PRINT BTN ─── */
+    .print-bar {
+      display: flex;
+      justify-content: center;
+      padding: 1.5rem 2.5rem;
+      border-top: 2px dashed #ddd;
+    }
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: #FFA500;
+      color: #000;
+      border: 2.5px solid #000;
+      box-shadow: 3px 3px 0 #000;
+      padding: 0.6rem 1.4rem;
+      cursor: pointer;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+    .print-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #000; }
+    .print-btn:active { transform: translate(1px,1px); box-shadow: 1px 1px 0 #000; }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      .back-btn, .print-bar { display: none !important; }
+      .cv-wrapper { border: none; box-shadow: none; max-width: 100%; }
+    }
+
+    @media (max-width: 600px) {
+      .cv-header { padding: 1.5rem 1.2rem; }
+      .cv-name { font-size: 1.5rem; }
+      .cv-body { padding: 1.5rem 1.2rem; }
+      .print-bar { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="/" class="back-btn">
+    ← Volver al Portfolio
+  </a>
+
+  <div class="cv-wrapper">
+
+    <!-- HEADER -->
+    <div class="cv-header">
+      <div class="cv-name">Kevin <span>Tobias</span> Martinez</div>
+      <div class="cv-role">// Programador Web con IA &amp; Técnico en Reparación de PC</div>
+      <div class="cv-contact-row">
+        <span>📍 Berisso, Buenos Aires</span>
+        <a href="mailto:walthie.white.22@gmail.com">walthie.white.22@gmail.com</a>
+        <a href="https://github.com/Walthier" target="_blank">github.com/Walthier</a>
+        <a href="https://linkedin.com/in/kevin-martinez" target="_blank">linkedin.com/in/kevin-martinez</a>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="cv-body">
+
+      <!-- PERFIL -->
+      <div class="cv-section cv-summary">
+        <div class="cv-section-title">Perfil Profesional</div>
+        <p>
+          Desarrollador web con enfoque en frontend moderno y uso estratégico de Inteligencia Artificial
+          para acelerar flujos de trabajo, automatizar procesos y construir soluciones digitales a medida.
+          Técnico en reparación de PC con experiencia en diagnóstico de hardware, mantenimiento preventivo
+          y optimización de sistemas operativos. Orientado al cliente, proactivo y en constante aprendizaje.
+        </p>
+      </div>
+
+      <!-- HABILIDADES -->
+      <div class="cv-section">
+        <div class="cv-section-title">Habilidades</div>
+        <div class="cv-skills-grid">
+          <span class="cv-skill-chip">HTML5 / CSS3</span>
+          <span class="cv-skill-chip">JavaScript</span>
+          <span class="cv-skill-chip">Vite</span>
+          <span class="cv-skill-chip">Integración de IA</span>
+          <span class="cv-skill-chip">Prompt Engineering</span>
+          <span class="cv-skill-chip">Diagnóstico Hardware</span>
+          <span class="cv-skill-chip">Mantenimiento PC</span>
+          <span class="cv-skill-chip">Optimización OS</span>
+          <span class="cv-skill-chip">Git / GitHub</span>
+          <span class="cv-skill-chip">Atención al Cliente</span>
+          <span class="cv-skill-chip">Español (Nativo)</span>
+          <span class="cv-skill-chip">Inglés (Técnico)</span>
+        </div>
+      </div>
+
+      <!-- PROYECTOS -->
+      <div class="cv-section">
+        <div class="cv-section-title">Proyectos</div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div>
+              <div class="cv-entry-title">Portfolio Personal</div>
+              <div class="cv-entry-sub">Sitio web propio — diseño Neo-Brutalist</div>
+            </div>
+            <div class="cv-entry-date">2026</div>
+          </div>
+          <div class="cv-entry-desc">
+            <ul>
+              <li>Desarrollado con Vite + HTML/CSS/JS vanilla, sin frameworks.</li>
+              <li>Diseño responsive mobile-first con sistema de diseño Neo-Brutalist propio.</li>
+              <li>Desplegado en GitHub Pages.</li>
+            </ul>
+            <div class="cv-project-link">→ walthier.github.io/PortFolio</div>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div>
+              <div class="cv-entry-title">Don Pochoclon</div>
+              <div class="cv-entry-sub">Página de demostración generada con IA</div>
+            </div>
+            <div class="cv-entry-date">2026</div>
+          </div>
+          <div class="cv-entry-desc">
+            <ul>
+              <li>Página de prueba y demostración generada con asistencia de IA.</li>
+              <li>Muestra capacidad de integración de herramientas modernas.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- EDUCACIÓN -->
+      <div class="cv-section">
+        <div class="cv-section-title">Educación &amp; Formación</div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div>
+              <div class="cv-entry-title">Desarrollo Web Frontend</div>
+              <div class="cv-entry-sub">Formación autodidacta + cursos online</div>
+            </div>
+            <div class="cv-entry-date">2025 – Actualidad</div>
+          </div>
+          <div class="cv-entry-desc">
+            HTML5, CSS3, JavaScript, fundamentos de Vite, Git y despliegue en GitHub Pages.
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div>
+              <div class="cv-entry-title">Técnico en Reparación de PC</div>
+              <div class="cv-entry-sub">Formación técnica + experiencia práctica</div>
+            </div>
+            <div class="cv-entry-date">2023 – Actualidad</div>
+          </div>
+          <div class="cv-entry-desc">
+            Diagnóstico de hardware, ensamble, limpieza profunda, cambio de pasta térmica, instalación y optimización de sistemas operativos Windows y Linux.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- IDIOMAS -->
+      <div class="cv-section">
+        <div class="cv-section-title">Idiomas</div>
+        <div class="cv-skills-grid">
+          <span class="cv-skill-chip">Español — Nativo</span>
+          <span class="cv-skill-chip">Inglés — Técnico básico</span>
+        </div>
+      </div>
+
+    </div><!-- /cv-body -->
+
+    <!-- PRINT -->
+    <div class="print-bar">
+      <button class="print-btn" onclick="window.print()">
+        ↓ Descargar / Imprimir PDF
+      </button>
+    </div>
+
+  </div><!-- /cv-wrapper -->
+
+</body>
+</html>

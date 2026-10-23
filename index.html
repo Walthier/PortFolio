@@ -304,12 +304,33 @@
             </p>
           </div>
 
-          <!-- Ubicación arriba a la derecha en la sección de Contacto -->
-          <div class="location-badge contact-location-badge">
-            <svg class="icon-pin" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-            </svg>
-            <span>Berisso, Buenos Aires</span>
+          <!-- Ubicación + botones CV arriba a la derecha en la sección de Contacto -->
+          <div class="contact-header-right">
+            <div class="location-badge contact-location-badge">
+              <svg class="icon-pin" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <span>Berisso, Buenos Aires</span>
+            </div>
+            <div class="cv-action-btns">
+              <!-- Botón descargar CV (solo icono) -->
+              <a href="/cv.html" download="CV_Kevin_Martinez.html" class="cv-btn cv-btn-download" title="Descargar CV" aria-label="Descargar CV">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                <span class="cv-btn-tooltip">Descargar CV</span>
+              </a>
+              <!-- Botón ver CV -->
+              <a href="/cv.html" target="_blank" class="cv-btn cv-btn-view" aria-label="Mirar CV">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+                <span>Mirar CV</span>
+              </a>
+            </div>
           </div>
         </div>
 

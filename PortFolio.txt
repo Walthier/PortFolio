@@ -29,3 +29,21 @@ el efecto del color #780606 esta muy en medio, ponelo solo a los costados, queda
 no te dije que se lo saques, volve a poner el color #780606, volve a poner el efecto del fondo como estaba solo que no traspase las card, nomas que aparezca como trasparencia y que combine con el fondo negro
 
 el efecto de estatica de cuphead cambiala y remplazala por este video https://youtu.be/FTmkMFSOJ_0 agrega ese efecto de esa url, hace que no se vea tan molesto para el que entre a la pagina y el nombre de la pagina cambialo por <ktm/> | PortFolio
+
+en la seccion de habilidades y servicios tecnicos el "servicios tecnicoo" esta de mas, sacalo, pero vos decidis si dejarlo ahi despues de agregarle otra habilidad que sera "atencion al cliente" y tambien "idiomas" en idiomas pone q hablo español y se ingles basico, en los 2 pone textos genericos y bueno el estilo hacelo igual q los 2 que estan en la pagina, hacelos mobilefirts y hacelos simetricos
+
+en la seccion de habilidades, el de atencion a cliente ponelo arriba de donde esta reparacion de pc (el de reparacion de pc ponelo a la derecha) y el de programacion ponelo abajo a la izquierda
+
+en la seccion de contactos agrega el linkedin, hacelo simetrico y en mobilefirts, tambien en el footer saca el "Kevin tobias martinez" y lo que esta abajo ponelo simetrico y que se vea bien en mobilefirst el footer
+
+en la seccion de canales de contacto en directo, cambialo y pone solo "contacto" y en esa misma seccion, saca el de ubicacion cobertura porque ya se muestra en la seccion de presentacion, ponelo simetrico en cuando lo saques y en la seccion de proyectos en construccion, cambia el nombre por solamente por "proyectos" y en la misma seccion pone de paso otro proyecto al lado que seria este (poner el don pochoclon" solamente pone un texto generico de q solo esta de prueba y demostracion de lo que puedo hacer, hacelo simetrico y en mobilefirts
+
+en la seccion de proyectos cambiale el nombre a la de "pagina hecha con IA" por "Don Pochoclon" y en los botones de los 2 proyectos. cambiale por "Visitar pagina" y en la seccion de presentacion el logo de ubicacion y el texto de "Berisso, Buenos Aires" cambialo de lugar y ponelo en la seccion de contacto arriba a la derecha, como siempre mobilefirst y simetrico 
+
+en la pagina del "proyecto en desarollo hay muchos datos innecesarios y tambien el boton de github, sacalos y deja el boton de "volver al portfolio" dejalo simetrico y para mobilefirst y el nombre cambialo por "Project_Dev" 
+
+volvele a poner el de "Proyecto en desarrolo :)" y en la seccion de la pagina de Proyectos LA CARD QUE DICE "proyecto en desarollo" lo cambias por Project_Dev
+
+en la seccion de presentacion, el boton verde hacelo un poquito mas grande y separalo del texto y ponelo arriba a la izquierda y  el texto a la derecha, hacelo simetrico y mobilefirst
+
+en la seccion de presentacion, en mobile first, mi nombre aparece asimetrico, ponelo simetrico y mobilefirst 

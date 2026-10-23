@@ -493,29 +493,24 @@ a {
 }
 
 .hero-title {
-  font-size: clamp(1.85rem, 7vw, 3.4rem);
+  font-size: clamp(1.65rem, 6.2vw, 3.2rem);
   font-weight: 900;
-  line-height: 1.18;
-  letter-spacing: -0.75px;
+  line-height: 1.22;
+  letter-spacing: -0.5px;
   color: #ffffff;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .highlight-text-orange {
   color: var(--color-orange);
   position: relative;
-  display: inline-block;
-}
-
-.highlight-text-orange::after {
-  content: "";
-  position: absolute;
-  bottom: 8%;
-  left: -2%;
-  width: 104%;
-  height: 0.22em;
-  background: var(--color-red);
-  z-index: -1;
-  opacity: 0.85;
+  display: inline;
+  white-space: normal;
+  text-decoration: underline;
+  text-decoration-color: var(--color-red);
+  text-decoration-thickness: 0.18em;
+  text-underline-offset: 4px;
 }
 
 .location-badge {

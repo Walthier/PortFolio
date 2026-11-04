@@ -1,5 +1,5 @@
 /**
- * Interacciones del Portfolio - Kevin Tobias Martinez
+ * Interacciones del Portfolio - Walter Martinez
  * - Menú responsive Mobile-First (Hamburguesa en la derecha)
  * - Navegación con scroll suave y compensación del Navbar fijo (anti-solapamiento)
  * - Detección de sección activa en el Navbar (Presentación, Skills, Proyectos, Contacto)

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PORTFOLIO KEVIN TOBIAS MARTINEZ
+   PORTFOLIO WALTER MARTINEZ
    Arquitectura: MOBILE-FIRST
    Estilo: Neo-Brutalismo Oscuro + Retro Y2K / Glassmorphism
    Colores: #FFA500 (Naranja), #780606 (Rojo), #000000 (Negro)
@@ -630,6 +630,7 @@ a {
   font-family: var(--font-mono);
   font-weight: 800;
   font-size: 1.12rem;
+  line-height: 1;
   letter-spacing: -0.5px;
   display: inline-flex;
   align-items: center;
@@ -2077,10 +2078,16 @@ a {
 
   .nav-brand {
     height: auto;
+    min-height: 40px;
     border-color: transparent;
     background: transparent;
     box-shadow: none;
-    padding: 0.3rem 0.55rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 1.22rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .nav-brand:hover {

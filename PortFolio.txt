@@ -66,3 +66,15 @@ tambien quiero que el fondo afuera de las card, agregues una animacion minimalis
 que el navbar tenga tambien esos efectos que le pusiste
 
 en mobilefirst, la hamburguesa le hace falta esos efectos tambien, quiero que en el mobilefirst se vea bien como esta en modo escritorio, recorda ser simetrico 
+
+al abrir la hamburguesa no tiene ningun efecto, asi que, agregale efecto tambien
+
+que al abrir la hambueguesa tenga el fondo animado de los años 30 como el fondo negro que no son cards, hacelo simetrico
+
+mejor dejale el fondo negro como estaba al abrir la hamburguesa
+quiero que los efectos de brillo le bajes un poco, se ve muy brilloso. ajusta eso para que no sea molesto
+
+pone el efecto al abrir la hamburguesa, el de desplamiento, si puede ser como en los años 30 la animacion y que combine, mejor
+
+quiero que le cambies el nombre de la presentacion, en vez de ser "Kevin Tobias Martinez" que sea "Walter Martinez" logo de la pagina y en que esta en el navbar, cambialo a <WM/>, cuando lo termines, hacelo simetrico y que quede bien en mobilefirst tanto como para escritorio
+
